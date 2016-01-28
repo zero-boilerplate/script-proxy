@@ -31,6 +31,6 @@ goto EOF
 :EOF
 ```
 
-## TODO
+## Features
 
-The ideal is to have a central config file (like in the user's folder) to define settings like `LogPath`. This could then be used to alway log the commands called via `scroxy`. We can also have settings like `MustLogDuration` which could log the running time of the command.
+Defaults to load the config file at location `EXE_PATH``.toml`. If the config file does not exist, it defaults to log path at `EXE_PATH``.log`. The log path is used with [logrus](github.com/Sirupsen/logrus) and its `JSONFormatter` to write logs. For now it writes when the command STARTS and when it ENDS. It also catches the command's `Stdout` and `Stderr` in this log file.
